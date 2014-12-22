@@ -1,0 +1,365 @@
+/* CSS declarations go here */
+ html, body, #map-canvas {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	
+  }
+#map-canvas img{max-width:none;} 
+.bs-example{ margin: 20px; }
+.controls {
+		
+	margin-top: 16px;
+	border: 1px solid transparent;
+	border-radius: 2px 0 0 2px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 32px;
+	outline: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+#pac-input {
+	background-color: #fff;
+	padding: 0 11px 0 13px;
+	width: 400px;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	text-overflow: ellipsis;
+ }
+
+ #pac-input:focus {
+	border-color: #4d90fe;
+	margin-left: -1px;
+	padding-left: 14px;  /* Regular padding-left + 1. */
+	width: 401px;
+  }
+
+.pac-container {
+	font-family: Roboto;
+  }
+
+#type-selector {
+	color: #fff;
+	background-color: #4d90fe;
+	padding: 5px 11px 0px 11px;
+  }
+
+#type-selector label {
+	font-family: Roboto;
+	font-size: 13px;
+	font-weight: 300;
+  }
+
+	/*css for slider menu*/
+.slideout-menu {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	/* padding: 2px 2px; */
+	/* margin: -8px -12px 0 -12px; */
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+	font-size: 16px;
+	color: #333;
+	position: absolute;
+	top:0;
+	left: -330px;
+	width: 330px;
+	height: 55%;
+	background: #009775;
+	z-index: 1000;
+			/*
+			border: 1px solid #cccccc;
+		z-index: 1000;
+		background:#009775;
+		border-radius: 4px;
+		padding: 8px 12px;
+		margin: -8px -12px 0 -12px;
+		width: 198px;
+		box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+		font-size: 16px;
+		color: #333;
+		
+			*/
+	}
+.slideout-menu h3 {
+	position: relative;
+	padding: 4px 25px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 400;
+	border-bottom: 4px solid #e2e2e3;
+	}
+.slideout-menu .slideout-menu-toggle {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	display: inline-block;
+	padding: 0px 2px 0px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	background: #007d8a;
+	color: #fff;
+	text-decoration: none;
+	vertical-align: top;
+	border: 1px solid #464f75;
+	border-radius: 4px;
+	}
+.slideout-menu .slideout-menu-toggle:hover {
+	color: #fff;
+	background:#007d5f;
+	}
+.slideout-menu ul {
+	list-style: none;
+	font-weight: 300;
+	border-top: 1px solid #151515;
+	border-bottom: 1px solid #454545;
+	}
+.slideout-menu ul li {
+	border-top: 1px solid #454545;
+	border-bottom: 1px solid #151515;
+	}
+.slideout-menu ul li a {
+	position: relative;
+	display: block;
+	padding: 10px;
+	color: #999;
+	text-decoration: none;
+	}
+.slideout-menu ul li a:hover {
+	background: #000;
+	color: #fff;
+	}
+.slideout-menu ul li a i {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	opacity: .5;
+	}
+		
+.header {
+	padding: 6px;
+	background: #009775;
+
+	}
+.header .slideout-menu-toggle, .adminheader.slideout-menu-toggle {
+	font-size: 1.85em;
+	color: #fff;
+	text-decoration: none;
+	text-align:right;
+	display:inline-block;
+	}
+.header .slideout-menu-toggle:hover, .adminheader .slideout-menu-toggle:hover {
+	color: #fff;
+	}
+.header .slideout-menu-toggle i , .adminheader .slideout-menu-toggle i {
+	vertical-align: top;
+	margin: 0px 5px 0px 0px;
+	}
+.header .slideout-menu-toggle-new-centre, .adminheader .slideout-menu-toggle-new-centre {
+	font-size: 1.2em;
+	color: #fff;
+	text-decoration: none;
+	text-align:left;
+			
+	}
+#login-buttons a, .accounts-dialog a {
+	cursor: pointer;
+	text-decoration: none;
+	color:#eee;
+}
+#login-buttons .login-link-and-dropdown-list {
+		/* position:relative; */
+		position: absolute;
+		top: 12px;
+		right: 20px;
+	}
+a {
+	color: #eee;
+	text-decoration: none;
+		
+	}
+.accounts-dialog label, .accounts-dialog .title {
+	font-size: 80%;
+	margin-top: 7px;
+	margin-bottom: -2px;
+	color:#eee;
+	}
+#login-buttons .login-button:hover, .accounts-dialog .login-button:hover {
+	background: #0097;
+	}
+.accounts-dialog {
+		border: 1px solid #cccccc;
+		z-index: 1000;
+		background:#009775;
+		border-radius: 4px;
+		padding: 8px 12px;
+		margin: -8px -12px 0 -12px;
+		width: 198px;
+		box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+		font-size: 16px;
+		color: #333;
+	}
+#login-buttons .login-button, .accounts-dialog .login-button {
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+		padding: 4px 8px;
+		font-size: 80%;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		line-height: 1.5;
+		text-align: center;
+		color: #fff;
+		background: #007d8a;
+		border: 1px solid #464f75;
+		border-radius: 4px;
+    }
+#login-buttons .login-button:hover, .accounts-dialog .login-button :hover{
+	background: #007d5f;
+
+}
+/* #login-buttons .login-button:hover, .accounts-dialog .login-button:hover {
+background: #7580ac;
+}
+ */#login-dropdown-list {
+	position: absolute;
+	top: -1px;
+	left: -150px;
+}
+	/*Adding css for Add-new-place(innovation center) module*/
+
+	 
+.table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: black;
+}
+.label, .badge {
+	/* display: inline-block;  */
+	/* padding: 2px 4px;  */
+	width:100px;
+	/* font-size: 11.844px; */
+	/* font-weight: bold; */
+	line-height: 18px; 
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    white-space: nowrap; 
+	vertical-align: baseline; 
+	background-color: #007d8a;
+	border: 1px solid #464f75;
+	border-radius: 4px;
+	font-size: 75%;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	/* line-height: 1.5; */
+	text-align: center;
+
+}
+#country, #administrative_area_level_1, #postal_code, #locality, #route, #street_number, #innovationcenter{
+	width: 200px;
+	border: 1px solid #464f75;
+	border-radius: 4px;
+}
+#autocomplete  {
+	background-color: #ffffff;
+	border: 1px solid #464f75;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+	text-align: center;
+	float: middle;
+	position: relative;
+	top: 9;
+	right: -35px;
+}
+#messagebox{
+	display:none; 
+	font-size:70%;
+	text-align: center;
+	color:#ffffff;
+	font-family:Arial;
+	font-weight:bold;
+	border: 1px solid #464f75;
+	border-radius: 4px;
+	float:middle;
+	position:relative;
+	right:-100px;
+	width:100px; 
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #66CD00), color-stop(1, #66CD00) );
+	background:-moz-linear-gradient( center top, #66CD00 5%, #66CD00 100% );
+}
+.PlaceButton, .PanelButton {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007d8a), color-stop(1, #007d8a) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+	background-color:#007d8a;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	/* border:1px solid #007d8a; */
+		
+	border: 1px solid #464f75;
+	border-radius: 4px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:130px;
+	text-decoration:none;
+	text-align:center;
+}
+.PlaceButton:hover, .PanelButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007d5f), color-stop(1, #007d5f) );
+	background:-moz-linear-gradient( center top, #007d5f 5%, #007d5f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007d5f', endColorstr='#007d5f');
+	/* background-color:#007d5f; */
+}.PlaceButton:active, .PanelButton:active {
+	position:relative;
+	top:1.5px;
+}
+/* This button was generated using CSSButtonGenerator.com */
+.adminwrapper
+{
+height:100%;
+
+}
+.adminheader{
+
+padding: 5px; 
+background: #009775;
+color:#ffffff;
+font-family:Arial;
+font-weight:bold;
+
+}
+
+textarea{
+	width: 200px;
+}
+.Panelbuttons{
+	text-align: center;
+}

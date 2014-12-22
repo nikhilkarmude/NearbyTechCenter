@@ -1,0 +1,206 @@
+<head>
+  <title>Financial Innovation Tracker</title>
+  <link rel="stylesheet" type="text/css" href="style.css" >
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlKvABq34UidJ2uZrjnnKTvFAyoZjFNQc&sensor=FALSE&libraries=places">  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="markerclusterer.js"></script>
+
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    {{#if currentUser}}
+    <div class="header">
+            <a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i> Financial Innovation Tracker</a>
+          <!-- <div class="Panelbuttons"> -->
+            <input type="button" id="ShowMap" class="PanelButton" value="Go to Map" style="float: center;"/>
+            <input type="button" id="CloseMap" class="PanelButton" value="MyPanel" style="float: center;"/>
+          <!-- </div> -->
+            {{> loginButtons}}
+    </div>
+      {{> entries}}
+      {{else}}
+      <div class="header">
+            <a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i> Financial Innovation Tracker</a>
+          <!--   <input align="center" type="button" id="ShowMap" value="Go to Map"/>
+           -->
+             <!-- <input align="center" type="button" id="CloseMap" value="Go to Map"/> -->
+            {{> loginButtons}}
+
+    </div>
+    {{/if}}
+
+                {{> maps}}
+                
+                <!-- {{stylishmaps}} -->
+    <div class="slideout-menu">
+            <h3>Add New Innovation Center <a href="#" class="slideout-menu-toggle">&times;</a></h3>
+            <div id="locationField">
+                  <input id="autocomplete" placeholder="Enter the address"
+                         onFocus="geolocate()" type="text"/>
+            </div>
+                <table id="address">
+                  
+                  <tr>
+                    <td class="label">Innovation Name</td>
+                    <td class="slimField"><input class="field" id="innovationcenter"/></td>
+                  </tr>
+                  <tr>
+                    <td class="label">Street Line 1</td>
+                    <td class="slimField"><input class="field" id="street_number"  disabled="true"/></td>
+                  </tr>
+                  <tr>
+                    <td class="label">Street Line 2</td>
+                    <td class="wideField" colspan="2"><input class="field" id="route"
+                          disabled="true"/></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="label">City</td>
+                    <td class="wideField" colspan="3"><input class="field" id="locality"
+                          disabled="true"/></td>
+                  </tr>
+                  <tr>
+                    <td class="label">State</td>
+                    <td class="slimField"><input class="field"
+                          id="administrative_area_level_1" disabled="true"/></td>
+                    <tr><td class="label">Zip code</td>
+                    <td class="wideField"><input class="field" id="postal_code"
+                          disabled="true"/></td>
+                  </tr></tr>
+                  <tr>
+                    <td class="label">Country</td>
+                    <td class="wideField" colspan="3"><input class="field"
+                          id="country" disabled="true" alt="hi"/></td>
+                  </tr>
+                  <tr>
+                    <td class="label">Description</td>
+                    <td><textarea id="description" rows="4" cols="26">
+</textarea></td>
+                  </tr>
+                  
+                  <tr>
+                    <td></td>
+                    
+                    <td>
+                    <!-- <button type="submit">Click me here!</button> -->
+                    <input type="submit" class="PlaceButton" value="submit"  />
+                    </td>
+                    <td></td>
+                </tr>
+                </table>    
+                
+                <div id="messagebox" ></div> 
+            </div>
+            
+            
+        
+            
+   </body>
+
+<template name="maps">
+    
+    <!-- <input type="button" value="Show places" class="btn" /> -->
+       <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        
+        <div id="map-canvas"></div>
+    
+</template>
+<!-- my stylish Map -->
+<template name="stylishmaps">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map-canvas"></div>
+</template>
+
+<template name="infoWindowContent">
+    <h3><span class="glyphicon glyphicon-globe"></span> {{title}}</h3>
+    <!-- <p><b>Coordinates: </b> {{coord}}</p> -->
+    <p><b>Type: </b> {{type}}</p>
+    <p><b>Company Affiliation: </b> {{affiliation}}</p>
+     <p><b>Description:</b> {{description}}</p>
+    <p><b>Address:</b> {{address}}</p>
+    <p>
+      <button  class="glyphicon glyphicon-thumbs-up"></button>
+      <button  class="glyphicon glyphicon-thumbs-down"></button>
+    </p>
+    <!-- <p><b>Status:</b> {{status}}</p> -->
+
+</template>
+
+<template name="imported_data">
+    <div class="container">
+        <div class="row">
+            <div class="page-header"><h2>List of Innovation Centers/Places</h2></div>
+        </div>
+        <div class="span12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Innovation Name</th>
+                        <th>Description</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each entries}}
+                    <tr>
+                        <td>{{innovationCenter}}</td>
+                        <td>{{description}}</td>
+                        <td>{{address}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
+<template name="input">
+  <input type="text" id="message"><input type="button" id="sendMessage" value="send"/>
+</template>
+<template name="entries">
+ <div class="adminwrapper">
+    
+   
+    <div class="container">
+        <div class="row">
+            <div class="page-header"><h2>List of Innovation Centers/Places</h2></div>
+        </div>
+        <div class="span12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th><span class="glyphicon glyphicon-user"> </span> User</th>
+                      <th><span class="glyphicon glyphicon-tower"></span> Innovation Name</th>
+                      <th><span class="glyphicon glyphicon-info-sign"></span> Description</th>
+                      <th><span class="glyphicon glyphicon-map-marker"></span> Address</th>
+                      <th><span class="glyphicon glyphicon-edit"></span> Add/Delete Place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each entries}}
+                    <tr>
+                        <td>{{user.username}}</td>
+                        <td>{{innovationCenter}}</td>
+                        <td>{{description}}</td>
+                        <td>{{address}}</td>
+                        <td>
+                        <button  class="btn btn-default glyphicon glyphicon-plus"></button>
+                        <button  class="btn btn-default glyphicon glyphicon-minus"></button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</template>
